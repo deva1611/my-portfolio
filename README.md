@@ -2,7 +2,7 @@
 
 A personal portfolio website built with **React** and **JavaScript**, showcasing my projects, skills and experience as a Graduate Software & Embedded Engineer based in Liverpool, UK.
 
-🌐 **Live:** [devendrareddy.netlify.app](https://devendrareddy.netlify.app)
+🌐 **Live:** [devendrareddy-keesara.netlify.app](https://devendrareddy-keesara.netlify.app)
 
 ---
 
