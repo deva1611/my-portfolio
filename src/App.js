@@ -1,4 +1,4 @@
-﻿import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import { useState, useEffect } from "react";
 
 const NAV_LINKS = ["Home", "About", "Projects", "Skills", "Contact"];
@@ -18,28 +18,36 @@ const COLORS = {
 
 const FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif";
 
-const STACK_CHIPS = ["C++", "Python", "PostgreSQL", "Docker", "CI/CD", "ESP32"];
+const STACK_CHIPS = ["C/C++", "STM32", "CAN Bus", "ESP32", "Python", "Docker", "CI/CD"];
 
 const PROJECTS = [
   {
     id: 1,
-    title: "Smart Grid Anomaly Detection System",
-    description: "A real-time anomaly detection pipeline for smart electricity meter data. A C++ engine (Welford's algorithm over a sliding window) flags unusual readings, exposed through a Python FastAPI service and persisted to PostgreSQL. Containerized with Docker and built and tested automatically on every push via GitHub Actions.",
-    tech: ["C++", "Python", "PostgreSQL", "Docker", "GitHub Actions"],
-    live: "https://smart-grid-anomaly-detector.onrender.com/docs",
-    link: "https://github.com/deva1611/smart-grid-anomaly-detector",
+    title: "CAN Bus Vehicle-to-Vehicle Alert System",
+    description: "A four-node hardware prototype of vehicle-to-vehicle hazard alerts. An STM32 Blue Pill sensor node reads an ultrasonic sensor, ADXL345 accelerometer, DHT11 and light sensor, and sends alert codes over UART to an Arduino with an MCP2515, which broadcasts them on a 500 kbps CAN bus. On the receiving vehicle, a second STM32 node shows the hazard on an LCD and sounds a buzzer.",
+    tech: ["STM32", "CAN Bus", "MCP2515", "Arduino", "C/C++", "I2C", "UART"],
+    live: null,
+    link: "https://github.com/deva1611/can-v2v-alert-system",
     featured: true
   },
   {
     id: 2,
+    title: "Smart Grid Anomaly Detection System",
+    description: "A real-time anomaly detection pipeline for smart electricity meter data. A C++ engine (Welford's algorithm over a sliding window) flags unusual readings, exposed through a Python FastAPI service and persisted to PostgreSQL. Containerized with Docker and built and tested automatically on every push via GitHub Actions.",
+    tech: ["C++", "Python", "PostgreSQL", "Docker", "GitHub Actions"],
+    live: "https://smart-grid-anomaly-detector.onrender.com/docs",
+    link: "https://github.com/deva1611/smart-grid-anomaly-detector"
+  },
+  {
+    id: 3,
     title: "Face Recognition Security System",
-    description: "Real-time face recognition using C++ and OpenCV, running on Linux with a live video feed and integration with an ESP32 camera module. Built independently to strengthen my computer vision and embedded integration experience.",
-    tech: ["C++", "OpenCV", "ESP32", "Linux", "CMake"],
+    description: "Real-time face recognition in C++17 with OpenCV on Linux. Recognises known people with an LBPH model and, when an unknown face appears, sends a Wi-Fi alert to an ESP32 over raw POSIX sockets, with timeouts and rate limiting so the video loop never stalls.",
+    tech: ["C++17", "OpenCV", "ESP32", "POSIX sockets", "Linux", "CMake"],
     live: null,
     link: "https://github.com/deva1611/face-recognition-security"
   },
   {
-    id: 3,
+    id: 4,
     title: "NHS vs Private Decision Engine",
     description: "A web application built with Python and Flask that helps UK residents compare NHS and private healthcare options. Deployed and publicly accessible.",
     tech: ["Python", "Flask", "REST API"],
@@ -51,7 +59,7 @@ const PROJECTS = [
 const SKILL_GROUPS = [
   { category: "Languages", items: ["C++", "Python", "C"] },
   { category: "Data", items: ["SQL", "PostgreSQL"] },
-  { category: "Embedded", items: ["ESP32", "Microcontrollers", "Hardware–software integration"] },
+  { category: "Embedded", items: ["STM32", "ESP32", "Arduino", "CAN Bus", "UART / I2C / SPI", "Hardware–software integration"] },
   { category: "DevOps", items: ["Docker", "GitHub Actions (CI/CD)"] },
   { category: "Web", items: ["Flask", "React", "HTML", "CSS"] },
   { category: "Tools", items: ["Git", "Linux", "CMake"] }
